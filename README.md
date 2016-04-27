@@ -1,24 +1,26 @@
-# Toolset for QualInsight projects
-This repository provides a toolset and guidelines for developers contributing to QualInsight projects.
+# Developer Toolset for QualInsight projects
+This repository provides guidelines for developers contributing to QualInsight projects.
 
-## How to contribute to a QualInsight project ?
+## What steps should I follow if I want to contribute to a QualInsight project ?
 
-All QualInsight projects follow a "feature branch" approach. As such, we ask you to respect the following few steps and guidelines.
+We ask you to respect the following few steps:
 
 1. if you plan to fix a bug / add a new feature / help on a specific topic, please first create a GitHub issue in the project and explain what you plan to do.
-2. if your contribution implies consequent work, please first discuss with us the design of your contribution. This will ease the PR review and make sure that there will be no dispute concerning the design. 
+2. if your contribution implies consequent work, please first discuss with us the design of your contribution. This will ease the PR review and make sure that there will be no dispute concerning the design you have chosen. 
 3. fork the project you want to contribute to
-4. configure your IDE in order to respect QualInsight coding guidelines (see below)
-5. code your contribution as well as corresponding unit tests (see below)
-6. analyze your code using SonarLint default configuration
-7. commit your changes using wellformed messages and comments (see below)
-8. once you're done, make a wellformed pull request (see below)
+4. create a feature branch for your contribution
+5. configure your IDE in order to respect QualInsight coding guidelines (see below)
+6. code your contribution as well as corresponding unit tests (see below)
+7. analyze your code using SonarLint default configuration
+8. commit your changes to your branch using wellformed messages and comments (see below)
+9. once you're done, make a wellformed pull request in order to ask us to merge back your branch to our project (see below)
 
 # What coding guidelines do I need to follow ?
 
-* in order to avoid style issues and ease PR reviews, your IDE must be configured in order to use configuration files provided by this repository.
+* in order to avoid style issues and ease PR reviews, your IDE must be configured with configuration files provided by this repository.
+* use one 
 * if no configuration is provided for your IDE, please contact us.
-* public API must be at least 90% documented using javadoc
+* at least 90% public API javadoc documentation density must be reached for new code
 * classes must respect the "single responsibility principle" (SRP)
 * methods must be concise, i.e. method complexity should not be greater that 10
 * class names and method names must be clear and informative
@@ -39,8 +41,8 @@ The reasons for asking you to run existing tests and to provide tests for your c
 In order to achieve this, we ask you to:
 
 * make sure that existing tests still pass after having added your contribution
-* that you update existing tests if they need to be adapted
-* that you add tests for your contribution (at least 80% coverage)
+* update existing tests if they need to be adapted
+* add tests for your contribution (at least 80% coverage)
 
 What we do not ask you to do (but help is really appreciated):
 
@@ -59,7 +61,7 @@ We want to have our unit test methods self explanatory and as clear as possible.
 constant_<tested constant name>_should(Not)?_<whatever you want>
 ```
 
-While using `_` may seem ugly, this template brings two advantages:
+While using `_` instead of `lowerCamelCase` may seem ugly at first sight, using this convention for test methods brings two advantages:
 
 * test methods are nicely ordered in your IDE's class overview
 * when a test fails it is extremely easy to know what method has been impacted
@@ -68,7 +70,7 @@ While using `_` may seem ugly, this template brings two advantages:
 
 A wellformed commit message respects this template: `<imperative verb> <concise subject> #<issue id>`.
 
-Examples:
+_Examples_:
 
 ```
 improve documentation #12
@@ -91,6 +93,8 @@ Once your PR is merged, the project will be analysed by SonarQube's Nemo instanc
 
 * your code does not introduce new blocker issues
 * your code does not indroduce new critical issues
+
+You can download [SonarLint](http://www.sonarlint.org) from the official website.
 
 # Updating licences
 
